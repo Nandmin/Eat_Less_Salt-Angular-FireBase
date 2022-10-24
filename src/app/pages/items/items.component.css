@@ -1,0 +1,46 @@
+input[type="text"], input[type="number"]
+{
+    background: transparent;
+    border: none;
+    font-size: 20px;
+
+}
+
+input[type="number"]{
+    text-align: center; 
+    vertical-align: middle;
+}
+
+* {
+    /* background-color: rgb(247, 243, 243); */
+}
+
+h1 {
+    padding-top: 50px;
+}
+
+.table {
+    border-radius: 20px;
+    /* box-shadow: 0 0 10px; */
+    box-shadow: 38px 26px 16px 0px rgba(0,0,0,0.47);
+    /* border: 2 solid black; */
+    /* border: 1px solid #0a0a0a; */
+    overflow: hidden;
+
+}
+
+th {
+    /* border: 1px solid rgb(0,0,0);
+    border-style: hidden;
+    background-color: rgb(235, 227, 227); */
+}
+
+.row .accordion {
+    padding-top: 100px;
+}
+
+.accordion-button {
+    font-size: 40px;
+    text-align: center;
+
+}

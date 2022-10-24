@@ -1,19 +1,20 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Items } from './model/items';
-import { ItemsService } from './service/items.service';
+import { Items } from 'src/app/model/items';
+import { ItemsService } from 'src/app/service/items.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  encapsulation: ViewEncapsulation.None
+  selector: 'app-items',
+  templateUrl: './items.component.html',
+  styleUrls: ['./items.component.css'],
+  // encapsulation: ViewEncapsulation.None
 })
+export class ItemsComponent implements OnInit {
 
-export class AppComponent {
   title = 'salted-angular';
   items: Observable<any> = this.itemService.all;
   newItem: Items = new Items();
+  page: number | any;
 
   constructor(
     private itemService: ItemsService
@@ -44,6 +45,11 @@ export class AppComponent {
       resp => alert("Elem törölve"),
       err => alert(err.error)
       );
+  }
+
+  // constructor() { }
+
+  ngOnInit(): void {
   }
 
 }

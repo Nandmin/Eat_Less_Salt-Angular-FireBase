@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Charis+SIL&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+    /* background-color: blanchedalmond; */
+    /* font-family: 'Charis SIL', serif; */
+    font-family: 'Montserrat', sans-serif;
+    /* font-weight: 400; */
+}
+
+th {
+    /* background-color: rgb(212, 197, 197); */
+    font-size: 22px;
+}
+h1 {
+    padding-top: 40px;
+}
+h3 {
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+
+.navbar {
+    font-size: 30px;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+    /* word-spacing: 100px; */
+    /* width: 100%; */
+    /* box-shadow: -1px 23px 21px 1px rgba(0,0,0,0.74); */
+    /* box-shadow: -1px 23px 21px 1px rgba(13,71,161,0.74); */
+    box-shadow: -1px 23px 21px 1px rgba(16,13,161,0.74);
+
+}
+
+.navbar ul li { 
+	padding: 0px 25px; 
+ } 
+
+ .nav-link {
+    color: whitesmoke
+ }
+
+
+
