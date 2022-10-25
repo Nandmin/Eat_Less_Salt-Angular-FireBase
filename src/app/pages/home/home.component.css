@@ -1,10 +1,16 @@
 body {
     font-size: 25px;
-    background: url('../../img/HS_Dietitans-View_Blog-Header-copy-scaled.jpg') fixed;
+    /* background: url('../../img/HS_Dietitans-View_Blog-Header-copy-scaled.jpg') fixed;
     /* background: url('../../img/Eat-less-salt-1200x630.jpg') center; */
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
+    background-blend-mode: darken;  */
+    color: whitesmoke;
+    background: linear-gradient(180deg,#0d47a1 0%, #008dff 85%);
+}
+.text-decoration-none {
+    color: whitesmoke
 }
 
 .img {
@@ -24,13 +30,18 @@ article, span {
 h1, h2 {
     text-align: center;
     font-weight: bold;
-    padding-top: 25px;
-    padding-bottom: 25px;
+    padding-top: 100px;
+    padding-bottom: 30px;
+    opacity: 1;
 }
 
 source {
     padding-top:30px;
 
+}
+
+ul {
+    padding-bottom: 20px;
 }
 
 footer .container {
