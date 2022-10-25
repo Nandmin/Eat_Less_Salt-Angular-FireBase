@@ -35,6 +35,12 @@ th {
     background-color: rgb(235, 227, 227); */
 }
 
+.index {
+    font-weight: bold;
+    padding-left: 25px;
+    padding-top: 17px;
+}
+
 .row .accordion {
     padding-top: 100px;
 }

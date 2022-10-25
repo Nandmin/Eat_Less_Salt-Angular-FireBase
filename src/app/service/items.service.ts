@@ -14,15 +14,20 @@ export class ItemsService {
 
   all: Observable<any>
   itemsCollection: AngularFirestoreCollection<any>;
+  // id: AngularFirestoreCollection<Items>;
+
   constructor(
     private fireStore: AngularFirestore
   ) {
-    this.itemsCollection = this.fireStore.collection('lowsaltDB');
+    this.itemsCollection = this.fireStore.collection('Sausages');
     //kötegelt lekérdezés kettesével
     //this.itemsCollection = this.fireStore.collection<Items>('lowsaltDB', ref => ref.where('name', '!=', '').limit(2));
     this.all = this.itemsCollection.valueChanges({
       idField: 'docID'
     });
+
+    // this.id = this.fireStore.collection<Items>('Sausages', ref => ref.where('id', '!=', ''));
+    // console.log('id: ',  this.id.valueChanges({idField: 'id'}));
    }
 
    create(doc: any): Promise<any>{

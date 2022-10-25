@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Items } from 'src/app/model/items';
 import { ItemsService } from 'src/app/service/items.service';
@@ -15,12 +15,18 @@ export class ItemsComponent implements OnInit {
   items: Observable<any> = this.itemService.all;
   newItem: Items = new Items();
   page: number | any;
+  // id: number;
+  index: number = 1;
+  
+  
 
   constructor(
-    private itemService: ItemsService
+    private itemService: ItemsService,
+    
   ){
 
   }
+
 
   onCreate(items:Items): void {
     this.itemService.create(items).then(

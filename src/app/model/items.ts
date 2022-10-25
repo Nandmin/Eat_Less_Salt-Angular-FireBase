@@ -1,5 +1,6 @@
 export class Items {
     docID?: string;
+    id!: number;
     name!: string;
     energyKJ!: number;
     energyKcal!: number;

@@ -30,7 +30,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     NgxPaginationModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [PaginationComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
