@@ -7,11 +7,13 @@ import { ItemsComponent } from './pages/items/items.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AppComponent } from './app.component';
 import { InformationsComponent } from './pages/informations/informations.component';
+import { SignUpComponent } from './pages/sign-up/sign-up.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'items', component: ItemsComponent },
   { path: 'informations', component: InformationsComponent },
+  { path: 'sign-up', component: SignUpComponent },
   { path: '**', component: HomeComponent }
 ];
 

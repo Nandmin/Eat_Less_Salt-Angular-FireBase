@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { environment } from 'src/environments/environment';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { SignUpComponent } from './pages/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     HomeComponent,
     ItemsComponent,
     InformationsComponent,
-    PaginationComponent
+    PaginationComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
@@ -29,6 +31,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
     FormsModule,
     NgxPaginationModule,
     AppRoutingModule
+    // providerAuth(() => getAuth()),
+    // providerStorage(() => getStorage()),
+    // providerFiresStore(() => getFireStore())
   ],
   providers: [PaginationComponent],
   bootstrap: [AppComponent]
