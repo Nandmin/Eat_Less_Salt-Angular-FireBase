@@ -14,6 +14,7 @@ import { environment } from 'src/environments/environment';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
+import { MenuComponent } from './components/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SignUpComponent } from './pages/sign-up/sign-up.component';
     ItemsComponent,
     InformationsComponent,
     PaginationComponent,
-    SignUpComponent
+    SignUpComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
