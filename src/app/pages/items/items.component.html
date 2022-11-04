@@ -148,9 +148,97 @@
                     <div class="row" style="display: contents;">
                       <div class="col">
                         <button (click)="onUpdate(item)" class="btn btn-primary pr-1">Update</button>
+
+                        <!-- <button type="button" id="btnOpen" class="btn btn-primary pr-1" (click)="onUpdate(item)">Update</button>
+                          <div id="updateModal" class="modal fade" role="dialog" [ngStyle]="{'display': updateModalIsOpen ? 'block' : 'none', 'opacity': 1}">
+                            <div class="modal-dialog modal-dialog-centered modal">
+                              <div class="modal-content">
+                              <div class="modal-header">
+                                <h4 class="modal-title fs-5"></h4>
+                              </div> -->
+                              <!-- <div class="modal-body">Az adatfrissítés sikerült!</div> -->
+                              <!-- <div class="modal-body"> {{ message }} </div>
+                              <div class="modal-footer" text-align="right"> -->
+                                <!-- <button type="button" id="btnOK" class="btn btn-success" (click)="btnOKClick(false)"><i class="fa fa-check fa-fw"></i> OK</button> -->
+                                <!-- <button type="button" id="btnClose" class="btn btn-danger" (click)="openModal(false)"><i class="fa fa-times fa-fw"></i> Cancel</button> -->
+                              <!-- </div>
+                              </div>
+                            </div>
+                          </div> -->
                       </div>
                       <div class="col">
-                        <button (click)="onDelete(item)" class="btn btn-danger">Delete</button>
+                        <!-- <button (click)="onDelete(item)" class="btn btn-danger">Delete</button> -->
+
+                        <button type="button" id="btnOpen" class="btn btn-danger" data-bs-toggle="modal" (click)="onDelete(item)">Delete</button>
+                          
+                        <!-- <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" role="dialog" [ngStyle]="{'display': deleteModalIsOpen ? 'block' : 'none', 'opacity': 1}"> -->
+                        <!-- <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                          <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Modal 1</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                                Show a second modal and hide this one with the button below.
+                              </div>
+                              <div class="modal-footer">
+                                <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Open second modal</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1" role="dialog">
+                          <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Modal 2</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                                Hide this modal and show the first with the button below.
+                              </div>
+                              <div class="modal-footer">
+                                <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Back to first</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                         -->
+
+                         <div id="confirmModal" class="modal fade" role="dialog" [ngStyle]="{'display': confirmModalIsOpen ? 'block' : 'none', 'opacity': 1}">
+                          <div class="modal-dialog modal-dialog-centered modal">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                              <h4 class="modal-title"></h4>
+                            </div>
+                            <div class="modal-body">Biztos szeretnéd törölni az adatot?</div>
+                            <div class="modal-footer" text-align="right">
+                              <button type="button" id="btnOK" class="btn btn-success" (click)="onDelete(item)"><i class="fa fa-check fa-fw"></i> OK</button>
+                              <!-- <button type="button" id="btnOK" class="btn btn-success" (click)="true"><i class="fa fa-check fa-fw"></i> OK</button> -->
+                              <!-- <button type="button" id="btnClose" class="btn btn-danger" (click)="(false)"><i class="fa fa-times fa-fw"></i> Cancel</button> -->
+                              <button type="button" id="btnClose" class="btn btn-danger" (click)="btnDelOKClick(false)"><i class="fa fa-times fa-fw"></i> Cancel</button>
+                            </div>
+                            </div>
+                          </div>
+                        </div>
+                        
+                          <!-- <div id="deleteModal" class="modal fade" role="dialog" [ngStyle]="{'display': deleteModalIsOpen ? 'block' : 'none', 'opacity': 1}">
+                            <div class="modal-dialog modal-dialog-centered modal">
+                              <div class="modal-content">
+                              <div class="modal-header">
+                                <h4 class="modal-title"></h4>
+                              </div>
+                              <div class="modal-body">Az adattörlés sikerült!</div>
+                              <div class="modal-footer" text-align="right">
+                                <button type="button" id="btnOK" class="btn btn-success" (click)="btnDelOKClick(false)"><i class="fa fa-check fa-fw"></i> OK</button>
+                                <button type="button" id="btnClose" class="btn btn-danger" (click)="deleteModal(false)"><i class="fa fa-times fa-fw"></i> Cancel</button>
+                              </div>
+                              </div>
+                            </div>
+                          </div> -->
+
+
                       </div>
                     </div>
                     <!-- <button (click)="onUpdate(item)" class="btn btn-primary pr-1">Update</button>
@@ -169,6 +257,23 @@
           </div>
         </div>
       </div>
+      <!-- Start Messenger Modal -->
+      <div id="messengerModal" class="modal fade" role="dialog"
+        [ngStyle]="{'display': messengerModalIsOpen ? 'block' : 'none', 'opacity': 1}">
+        <div class="modal-dialog modal-dialog-centered modal">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body text-center">{{ message }}</div>
+            <div class="modal-footer" text-align="right">
+              <button type="button" id="btnOK" class="btn btn-success" (click)="btnMessengerClick(false)"><i
+                  class="fa fa-check fa-fw"></i> OK</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End of Messenger Modal -->
 
 
         <!-- <h1 class="new text-center">Új termék rögzítése</h1>

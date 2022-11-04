@@ -1,5 +1,10 @@
 
 <body>
+    <!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
     <div class="container">
         <div class="title">Registration</div>
         <form action="#">
@@ -8,28 +13,28 @@
                     <span class="details">Full Name</span>
                     <input type="text" placeholder="Enter your name" required>
                 </div>
-                <div class="input-box">
+                <!-- <div class="input-box">
                     <span class="details">UserName</span>
                     <input type="text" placeholder="Enter your username" required>
-                </div>
+                </div> -->
                 <div class="input-box">
                     <span class="details">E-mail</span>
-                    <input type="email" placeholder="Enter your e-mail" required>
+                    <input type="email" placeholder="Enter your e-mail" #userEmail required>
                 </div>
-                <div class="input-box">
+                <!-- <div class="input-box">
                     <span class="details">Phone Number</span>
                     <input type="text" placeholder="Enter your name" required>
-                </div>
+                </div> -->
                 <div class="input-box">
                     <span class="details">Password</span>
-                    <input type="password" placeholder="Enter your password" required>
+                    <input type="password" placeholder="Enter your password" #userPwd required>
                 </div>
                 <div class="input-box">
                     <span class="details">Confirm password</span>
-                    <input type="password" placeholder="Confirm your password" required>
+                    <input type="password" placeholder="Confirm your password" #userPwd required>
                 </div>
             </div>
-            <div class="gender-details">
+            <!-- <div class="gender-details">
                 <input type="radio" name="gender" id="dot-1">
                 <input type="radio" name="gender" id="dot-2">
                 <input type="radio" name="gender" id="dot-3">
@@ -53,11 +58,58 @@
                             <span class="gender">Prefer not to say</span>
                         </label>
                     </div>
-            </div>
+            </div> -->
             <div class="button">
-                <input type="submit" value="Register">
+
+                <input type="submit" value="Sign Up" (click)="authService.SignUp(userEmail.value, userPwd.value)"/>
+                <div class="or text-center">
+                    <p>&nbsp;</p>
+                </div>
+                <span class="orInner text-center ">Or</span>
+            </div>
+            <div class="or text-center">
+                <p>&nbsp;</p>
             </div>
         </form>
+        
+        <div class="formGroup google">
+          </div>
+          <!-- Continue with Google -->
+          <div class="formGroup">
+            <!-- <button
+              type="button"
+              class="btn btn-outline-dark googleBtn"
+              (click)="authService.GoogleAuth()">
+              <i class="fab fa-google-plus-g"></i>
+              Continue with Google
+            </button>
+            <div class="row">
+                <div class="col-md-8">
+                  <a class="btn btn-outline-dark" (click)="authService.GoogleAuth()" role="button" style="text-transform:none">
+                    <img width="20px" style="margin-top:15px; margin-bottom:3px; margin-right:5px" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+                    Login with Google
+                  </a>
+                </div>
+              </div> -->
+              
+              <div class="col s12 m6 offset-m3 center-align">
+                <a class="oauth-container btn darken-4 white black-text" role="button" (click)="authService.GoogleAuth() " style="text-transform:none">
+                    <!-- href="/users/google-oauth/"  -->
+                    <div class="left">
+                        <img width="20px" style="margin-top:1px; margin-right:8px" alt="Google sign-in" 
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+                    </div>
+                    Login with Google
+                </a>
+            </div>
+          </div>
+        <!-- </div> -->
+
+        <div class="redirectToLogin">
+            <span
+              >Already have an account?
+              <span class="redirect" routerLink="/sign-in">Log In</span></span>
+          </div>
     </div>
 
 </body>

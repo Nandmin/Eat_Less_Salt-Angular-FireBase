@@ -8,7 +8,8 @@ body {
     background-attachment: fixed;
     background-size: 100% 100%;
     background-blend-mode: darken;  */
-    background: linear-gradient(180deg,#0d47a1 0%, #008dff 85%);
+    /* background: linear-gradient(180deg,#0d47a1 0%, #008dff 85%); */
+    background: radial-gradient(circle farthest-corner at center center, #004eff 0%, #00a9ff 80%);
     /* opacity: 0.1; */
     
 }

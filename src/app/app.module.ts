@@ -33,9 +33,6 @@ import { MenuComponent } from './components/menu/menu.component';
     FormsModule,
     NgxPaginationModule,
     AppRoutingModule
-    // providerAuth(() => getAuth()),
-    // providerStorage(() => getStorage()),
-    // providerFiresStore(() => getFireStore())
   ],
   providers: [PaginationComponent],
   bootstrap: [AppComponent]
