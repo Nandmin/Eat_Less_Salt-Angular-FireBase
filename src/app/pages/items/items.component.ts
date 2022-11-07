@@ -80,11 +80,8 @@ export class ItemsComponent implements OnInit {
     
     if(sFat > fat){
 
-          this.message='A telített zsír mennyisége nem lehet több, mint a zsír!';
-          this.errorModal(true);
-        
-      // window.alert('Adatrögzítési hiba');
-      console.log('create hiba');
+      this.message='A telített zsír mennyisége nem lehet több, mint a zsír!';
+      this.errorModal(true);
       return;
     }
 

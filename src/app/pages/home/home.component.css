@@ -1,22 +1,36 @@
 body {
-    /* background: url('../../img/HS_Dietitans-View_Blog-Header-copy-scaled.jpg') fixed; */
+    /* background-image: url('../../img/HS_Dietitans-View_Blog-Header-copy-scaled.jpg') fixed; */
+
     font-size: 25px;
-    color: whitesmoke;
-    
+    color: black;
+
     /* background: url('../../img/Eat-less-salt-1200x630.jpg') center; */
     /* background-repeat: no-repeat; */
     /* background-attachment: fixed;
     background-size: 100% 100%;
     background-blend-mode: overlay;  */
-    background: linear-gradient(180deg,#0d47a1 0%, #008dff 85%);
+    /* background: linear-gradient(180deg,#0d47a1 0%, #008dff 85%); */
+    /* background: radial-gradient(circle farthest-corner at center center, #fef1f1 0%, #d0d2e2 80%);
+    background: -webkit-radial-gradient(circle farthest-corner at center center, #fef1f1 0%, #d0d2e2 80%);
+    background: -moz-radial-gradient(circle farthest-corner at center center, #fef1f1 0%, #d0d2e2 80%); */
+
+    background-color: #fef1f1;
+    /* background: linear-gradient(0deg,#fef1f1 20%, #c8c8d0 80%);
+    background: -webkit-linear-gradient(0deg,#fef1f1 20%, #c8c8d0 80%);
+    background: -moz-linear-gradient(0deg,#fef1f1 20%, #c8c8d0 80%); */
+
+
+
     /* background: radial-gradient(circle farthest-corner at center center, #004eff 0%, #00a9ff 80%); */
     /* opacity: 0.1; */
     /* background: radial-gradient(circle farthest-side at center center, #004eff 0%, #00a9ff 80%); */
     /* background: -webkit-radial-gradient(circle farthest-side at center center, #004eff 0%, #00a9ff 80%); */
     /* background: -moz-radial-gradient(circle farthest-side at center center, #004eff 0%, #00a9ff 80%); */
-    
+
 }
-/* 
+
+
+/*
 body::before {
     content: "";
     position: absolute;
@@ -28,16 +42,25 @@ body::before {
 } */
 
 .text-decoration-none {
-    color: whitesmoke
+    color: black
 }
 
 .container {
-    
+
 }
 
-.img {
-    background: url('../../img/Eat-less-salt-1200x630.jpg');
+img {
+    /* background: url('../../img/Eat-less-salt-1200x630.jpg'); */
+    height: 630px;
+    width: 1200px;
     z-index: 1;
+    border-radius: 25px;
+    overflow: hidden;
+    
+
+    box-shadow: 18px 15px 12px 4px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 18px 15px 12px 4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 18px 15px 12px 4px rgba(0,0,0,0.75);
 }
 
 article, span {
