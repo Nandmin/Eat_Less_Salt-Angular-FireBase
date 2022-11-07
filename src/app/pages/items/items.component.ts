@@ -18,6 +18,8 @@ export class ItemsComponent implements OnInit {
   message: string = "";
   // id: number;
   index: number = 1;
+  fat: number = 0;
+  sFat: number = 0;
   
   
 
@@ -29,9 +31,14 @@ export class ItemsComponent implements OnInit {
   public confirmModalIsOpen : boolean = false;
   public deleteModalIsOpen : boolean = false;
   public messengerModalIsOpen : boolean = false;
+  public errorModalIsOpen : boolean = false;
 
   public messengerModal(open : boolean) : void {
     this.messengerModalIsOpen = open;
+  }
+
+  public errorModal(open : boolean) : void {
+    this.errorModalIsOpen = open;
   }
 
   // public openModal(open : boolean) : void {
@@ -54,6 +61,10 @@ export class ItemsComponent implements OnInit {
   public btnMessengerClick(close: boolean) : void {
     this.messengerModalIsOpen = close;
   }
+
+  public btnErrorClick(close: boolean) : void {
+    this.errorModalIsOpen = close;
+  }
   
   public btnConfDelOKClick(close: boolean) : void {
     // this.confirmModalIsOpen = close;
@@ -65,7 +76,18 @@ export class ItemsComponent implements OnInit {
     this.deleteModalIsOpen = close;
   }
 
-  onCreate(items:Items): void {
+  onCreate(items:Items, fat: any, sFat: any): void {
+    
+    if(sFat > fat){
+
+          this.message='A telített zsír mennyisége nem lehet több, mint a zsír!';
+          this.errorModal(true);
+        
+      // window.alert('Adatrögzítési hiba');
+      console.log('create hiba');
+      return;
+    }
+
     this.message = "Új elem hozzáadva!"
 
     this.itemService.create(items).then(

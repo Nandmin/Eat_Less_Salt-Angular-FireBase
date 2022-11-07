@@ -54,10 +54,10 @@
                   <input [(ngModel)]="newItem.energyKcal" type="number" class="form-control  bg-white">
                 </td>
                 <td>
-                  <input [(ngModel)]="newItem.fat" type="number" class="form-control  bg-white">
+                  <input [(ngModel)]="newItem.fat" type="number" class="form-control  bg-white" name="fat" #fat>
                 </td>
                 <td>
-                  <input [(ngModel)]="newItem.sFat" type="number" class="form-control  bg-white">
+                  <input [(ngModel)]="newItem.sFat" type="number" class="form-control  bg-white" name="sFat" #sfat>
                 </td>
                 <td>
                   <input [(ngModel)]="newItem.carbonHydrate" type="number" class="form-control  bg-white">
@@ -72,7 +72,7 @@
                   <input [(ngModel)]="newItem.salt" type="number" class="form-control  bg-white">
                 </td>
                 <td>
-                  <button (click)="onCreate(newItem)" class="btn btn-success">Add</button>
+                  <button (click)="onCreate(newItem, fat.value, sfat.value)" class="btn btn-success">Add</button>
                 </td>
               </tr>
             </tbody>
@@ -275,6 +275,23 @@
       </div>
       <!-- End of Messenger Modal -->
 
+      <!-- Start Error Modal -->
+      <div id="errorModal" class="modal fade" role="dialog"
+        [ngStyle]="{'display': errorModalIsOpen ? 'block' : 'none', 'opacity': 1}">
+        <div class="modal-dialog modal-dialog-centered modal">
+          <div class="modal-content">
+            <div class="modal-header-error">
+              <h4 class="modal-title text-center p-3">Adatrögzítési hiba!</h4>
+            </div>
+            <div class="modal-body text-center pt-3 pb-3">{{ message }}</div>
+            <div class="modal-footer-error pt-3 pb-3" text-align="center">
+              <button type="button" id="btnOK" class="btn btn-danger" (click)="btnErrorClick(false)"><i
+                  class="fa fa-check fa-fw"></i> OK</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End of Error Modal -->
 
         <!-- <h1 class="new text-center">Új termék rögzítése</h1>
         <div class="col-10 offset-1">
