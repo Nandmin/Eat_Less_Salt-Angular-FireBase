@@ -25,6 +25,7 @@ export class AuthService {
         this.userData = user;
         localStorage.setItem('user', JSON.stringify(this.userData));
         JSON.parse(localStorage.getItem('user')!);
+        console.log("userdata: ", this.userData);
       } else {
         localStorage.setItem('user', 'null');
         JSON.parse(localStorage.getItem('user')!);
@@ -37,9 +38,12 @@ export class AuthService {
       .signInWithEmailAndPassword(email, password)
       .then((result) => {
         this.ngZone.run(() => {
-          this.router.navigate(['dashboard']);
+          // this.router.navigate(['dashboard']);
+          // sessionStorage.setItem('loggedUser', result.user?.displayName);
+          this.router.navigate(['home']);
         });
         this.SetUserData(result.user);
+        console.log('result user: ', result.user);
       })
       .catch((error) => {
         window.alert(error.message);

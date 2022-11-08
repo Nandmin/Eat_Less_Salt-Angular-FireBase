@@ -15,6 +15,9 @@ import { PaginationComponent } from './components/pagination/pagination.componen
 import { NgxPaginationModule } from 'ngx-pagination';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { LoginComponent } from './pages/login/login.component';
+import { getAuth } from 'firebase/auth';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,9 @@ import { MenuComponent } from './components/menu/menu.component';
     InformationsComponent,
     PaginationComponent,
     SignUpComponent,
-    MenuComponent
+    MenuComponent,
+    ProfileComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

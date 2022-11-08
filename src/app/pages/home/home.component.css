@@ -65,6 +65,7 @@ body::before {
 }
 
 .picture img {
+    margin-top: 50px;
     border-radius: 15px;
     box-shadow: 18px 15px 12px 4px rgba(0,0,0,0.75);
 }
