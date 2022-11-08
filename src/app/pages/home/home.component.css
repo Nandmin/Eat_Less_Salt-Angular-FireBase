@@ -49,18 +49,24 @@ body::before {
 
 }
 
-img {
-    /* background: url('../../img/Eat-less-salt-1200x630.jpg'); */
-    height: 630px;
-    width: 1200px;
+.carousel-inner .carousel-item img {
+    height: 550px;
+    /* width: 100%;  */
     z-index: 1;
-    border-radius: 25px;
+    /* border-radius: 15px; */
+    border: none;
     overflow: hidden;
+    mix-blend-mode: darken;
     
 
     box-shadow: 18px 15px 12px 4px rgba(0,0,0,0.75);
     -webkit-box-shadow: 18px 15px 12px 4px rgba(0,0,0,0.75);
     -moz-box-shadow: 18px 15px 12px 4px rgba(0,0,0,0.75);
+}
+
+.picture img {
+    border-radius: 15px;
+    box-shadow: 18px 15px 12px 4px rgba(0,0,0,0.75);
 }
 
 article, span {
