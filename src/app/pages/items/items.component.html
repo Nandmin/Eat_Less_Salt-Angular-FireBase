@@ -60,10 +60,10 @@
                   <input [(ngModel)]="newItem.sFat" type="number" class="form-control  bg-white" name="sFat" #sfat>
                 </td>
                 <td>
-                  <input [(ngModel)]="newItem.carbonHydrate" type="number" class="form-control  bg-white">
+                  <input [(ngModel)]="newItem.carbonHydrate" type="number" class="form-control  bg-white" #carbon>
                 </td>
                 <td>
-                  <input [(ngModel)]="newItem.sugar" type="number" class="form-control  bg-white">
+                  <input [(ngModel)]="newItem.sugar" type="number" class="form-control  bg-white" #sugar>
                 </td>
                 <td>
                   <input [(ngModel)]="newItem.protein" type="number" class="form-control  bg-white">
@@ -72,7 +72,7 @@
                   <input [(ngModel)]="newItem.salt" type="number" class="form-control  bg-white">
                 </td>
                 <td>
-                  <button (click)="onCreate(newItem, fat.value, sfat.value)" class="btn btn-success">Add</button>
+                  <button (click)="onCreate(newItem, fat.value, sfat.value, carbon.value, sugar.value)" class="btn btn-success">Add</button>
                 </td>
               </tr>
             </tbody>

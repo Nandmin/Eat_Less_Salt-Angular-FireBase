@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../service/auth.service';
+import { User } from '../../service/user';
 
 @Component({
   selector: 'app-menu',
@@ -8,20 +9,24 @@ import { AuthService } from '../../service/auth.service';
 })
 export class MenuComponent implements OnInit {
 
-  userDisplayName: any | any[] | null= '';
+  userDisplayName: any | any[] | null = '';
+  userData: any = '';
 
   constructor(  
     public auth: AuthService
   ) { }
 
-  ngOnInit(): void {
-    let userDisplayName = this.auth.userData.displayName;// localStorage.getItem('user'!);
+  
 
-    console.log('username: ', this.auth.userData.displayName);
-    // Test data
-    if (userDisplayName == null || userDisplayName == 'undefined'){
-      this.userDisplayName = 'Logged user';
-    }
+  
+  ngOnInit(): void {
+    // let userDisplayName = this.auth.userData.displayName;// localStorage.getItem('user'!);
+  
+    // console.log('username: ', this.auth.userData.displayName);
+    // // Test data
+    // if (userDisplayName == null || userDisplayName == 'undefined'){
+    //   this.userDisplayName = 'Logged user';
+    // }
   }
 
 }

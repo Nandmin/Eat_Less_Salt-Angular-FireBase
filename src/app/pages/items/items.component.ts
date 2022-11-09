@@ -76,11 +76,18 @@ export class ItemsComponent implements OnInit {
     this.deleteModalIsOpen = close;
   }
 
-  onCreate(items:Items, fat: any, sFat: any): void {
+  onCreate(items:Items, fat: any, sFat: any, carbon: any, sugar: any): void {
     
     if(sFat > fat){
 
       this.message='A telített zsír mennyisége nem lehet több, mint a zsír!';
+      this.errorModal(true);
+      return;
+    }
+
+    if(sugar > carbon){
+
+      this.message='A cukor mennyisége nem lehet több az összes szénhidrát mennyiségénél!';
       this.errorModal(true);
       return;
     }
