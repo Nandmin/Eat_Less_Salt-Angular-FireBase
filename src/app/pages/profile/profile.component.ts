@@ -1,7 +1,7 @@
 import { Component, NgZone, OnInit } from '@angular/core';
 import { getAuth, updateProfile } from 'firebase/auth';
 import { AuthService } from 'src/app/service/auth.service';
-import * as auth from 'firebase/auth';
+
 
 @Component({
   selector: 'app-profile',
@@ -10,7 +10,12 @@ import * as auth from 'firebase/auth';
 })
 export class ProfileComponent implements OnInit {
 
-  user: any = getAuth().currentUser
+  userDisplayName: any | any[] | null = '';
+  userData: any = this.authService.userData;
+
+  user$: any = getAuth().currentUser
+  gender: string = '';
+  birthday: string = ''
 
   constructor(
     // public afs: AngularFirestore,   // Inject Firestore service
@@ -74,6 +79,10 @@ export class ProfileComponent implements OnInit {
   
 
   ngOnInit(): void {
+    let userDisplayName =  localStorage.getItem('user'!);
+    console.log('username: ', this.authService.userData);
+    console.log('userdata prof: ', this.userData);
+    console.log('username2: ', userDisplayName);
   }
 
 }

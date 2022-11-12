@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 
 export class AuthService {
   userData: any; // Save logged in user data
+  user: any;
   
   constructor(
     public afs: AngularFirestore, // Inject Firestore service
@@ -114,6 +115,8 @@ export class AuthService {
   sign up with username/password and sign in with social auth  
   provider in Firestore database using AngularFirestore + AngularFirestoreDocument service */
   SetUserData(user: any) {
+    this.user = user;
+    console.log('authuser: ', user)
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(
       `users/${user.uid}`
     );
@@ -122,6 +125,7 @@ export class AuthService {
       email: user.email,
       displayName: user.displayName,
       photoURL: user.photoURL,
+      // role: user.role,
       emailVerified: user.emailVerified,
     };
     return userRef.set(userData, {

@@ -21,6 +21,7 @@
     "@angular/router": "~13.2.0",
     "bootstrap": "^5.2.2",
     "firebase": "^9.12.1",
+    "firestore": "^1.1.6",
     "ngx-pagination": "^6.0.2",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",

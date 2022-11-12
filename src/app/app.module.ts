@@ -18,6 +18,10 @@ import { MenuComponent } from './components/menu/menu.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { LoginComponent } from './pages/login/login.component';
 import { getAuth } from 'firebase/auth';
+import { getStorage, provideStorage } from '@angular/fire/storage';
+import { provideAuth } from '@angular/fire/auth';
+import { provideFirestore } from '@angular/fire/firestore';
+import { getFirestore } from 'firebase/firestore';
 
 @NgModule({
   declarations: [
@@ -34,6 +38,9 @@ import { getAuth } from 'firebase/auth';
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
+    provideStorage(() => getStorage()),
     AngularFirestoreModule,
     FormsModule,
     NgxPaginationModule,

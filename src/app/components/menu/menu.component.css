@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Charis+SIL&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Charis+SIL&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 * {
@@ -12,9 +12,11 @@ th {
     /* background-color: rgb(212, 197, 197); */
     font-size: 22px;
 }
+
 h1 {
     padding-top: 40px;
 }
+
 h3 {
     padding-top: 20px;
     padding-bottom: 50px;
@@ -38,6 +40,14 @@ h3 {
 
  .nav-link {
     color: whitesmoke
+ }
+
+ .nav-link-login {
+    color: whitesmoke;
+ }
+
+ .nav .user {
+    color:yellow
  }
 
 

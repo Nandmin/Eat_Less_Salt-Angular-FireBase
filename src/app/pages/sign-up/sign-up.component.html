@@ -6,11 +6,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 
     <div class="container">
-        <div class="title">Registration</div>
+        <div class="title">Regisztrációs űrlap</div>
         <form action="#">
             <div class="user-details">
                 <div class="input-box">
-                    <span class="details">Full Name</span>
+                    <span class="details">
+                        <span>Teljes név (nem kötelező)</span>
+                    </span>
                     <input type="text" placeholder="Enter your name" required>
                 </div>
                 <!-- <div class="input-box">
@@ -26,11 +28,11 @@
                     <input type="text" placeholder="Enter your name" required>
                 </div> -->
                 <div class="input-box">
-                    <span class="details">Password</span>
+                    <span class="details">Jelszó</span>
                     <input type="password" placeholder="Enter your password" #userPwd required>
                 </div>
                 <div class="input-box">
-                    <span class="details">Confirm password</span>
+                    <span class="details">Jelszó</span>
                     <input type="password" placeholder="Confirm your password" #userPwd required>
                 </div>
             </div>
@@ -65,7 +67,7 @@
                 <div class="or text-center">
                     <p>&nbsp;</p>
                 </div>
-                <span class="orInner text-center ">Or</span>
+                <span class="orInner text-center ">or connect with</span>
             </div>
             <div class="or text-center">
                 <p>&nbsp;</p>
@@ -108,7 +110,8 @@
         <div class="redirectToLogin">
             <span
               >Already have an account?
-              <span class="redirect" routerLink="/login">Log In</span></span>
+              <span class="redirect" routerLink="/login" style="color: blue;">Log In</span>
+            </span>
           </div>
     </div>
 

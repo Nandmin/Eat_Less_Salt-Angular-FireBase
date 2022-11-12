@@ -40,7 +40,7 @@ body {
     left: 0;
     bottom: 0;
     height: 3px;
-    width: 30px;
+    width: 170px;
     background: linear-gradient(135deg, #71b7e6, #9b59b6);
 
 }
@@ -135,10 +135,10 @@ button {
 .orInner {
     text-align: center;
 
-    margin-left: 50%;
-    margin-right: 50%;
-    font-weight: bold;
-    font-size: 20px;
+    margin-left: 35%;
+    margin-right: 20%;
+    /* font-weight: bold; */
+    font-size: 15px;
 }
 
 .redirectToLogin {

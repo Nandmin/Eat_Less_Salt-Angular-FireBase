@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../service/auth.service';
+import { AuthService } from 'src/app/service/auth.service';
 import { User } from '../../service/user';
 
 @Component({
@@ -11,6 +11,7 @@ export class MenuComponent implements OnInit {
 
   userDisplayName: any | any[] | null = '';
   userData: any = '';
+  isLoggedIn: boolean = this.auth.isLoggedIn; 
 
   constructor(  
     public auth: AuthService
@@ -20,6 +21,11 @@ export class MenuComponent implements OnInit {
 
   
   ngOnInit(): void {
+    if(this.isLoggedIn){
+      this.userData = this.auth.user.email;
+    }else{
+      // this.userData = 'logged user';
+    }
     // let userDisplayName = this.auth.userData.displayName;// localStorage.getItem('user'!);
   
     // console.log('username: ', this.auth.userData.displayName);

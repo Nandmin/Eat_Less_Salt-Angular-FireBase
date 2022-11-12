@@ -34,13 +34,24 @@
           </li> -->
         </ul>
       </div>
-      <ul class="nav justify-content-end">
-        <li class="nav-item">
-          <a class="nav-link" href="/login">Login</a>
+      <ul class="nav justify-content-end" *ngIf="auth.userData as user">
+        <li class="nav-item" *ngIf="!isLoggedIn">
+          <a class="nav-link-login" href="/login">Login</a>
         </li>
-        <li class="nav-item">
-          {{  userDisplayName }}
-        </li>
+        <!-- <li class="nav user">
+          {{  user.email}}
+        </li> -->
+        <li class="nav-item dropdown" *ngIf="isLoggedIn">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              {{user.email}}
+            </a>
+            <ul class="dropdown-menu ml-5">
+              <li><a class="dropdown-item" href="/profile">Profil</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" (click)="auth.SignOut()" href="#">Kijelentkezés</a></li>
+            </ul>
+          </li>
       </ul>
     </div>
+    Debug: {{ isLoggedIn }}
   </nav>

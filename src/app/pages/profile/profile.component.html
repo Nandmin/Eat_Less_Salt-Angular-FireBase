@@ -1,10 +1,16 @@
-<p>profile works!</p>
+<app-menu></app-menu>
+
+<!-- <p>profile works!</p> -->
 
 <!-- Top navigation -->
 <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
     <a class="navbar-brand col-sm-3 col-md-2 mr-0">
     </a>
   </nav>
+<h1>1</h1>
+<h1>1</h1>
+<h1>1</h1>
+<h1>1</h1>
   <!-- Sidebar navigation -->
   <div class="container-fluid">
     <div class="row">
@@ -35,7 +41,7 @@
           <div class="row" *ngIf="authService.userData as user">
             <div class="col-md-12">
               <div class="media">
-                <img class="align-self-start mr-5 img-thumbnail rounded-circle" src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.png'}}"
+                <img class="align-self-start mr-5 img-thumbnail rounded-circle" src="{{(user.photoURL) ? user.photoURL : '/assets/image/image-placholder.png'}}"
                   alt="{{user.displayName}}">
                 <div class="media-body">
                   <h1>Hello: <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h1>
@@ -50,3 +56,70 @@
       </main>
     </div>
   </div>
+
+<body>
+  
+
+  <div class="container">
+    <div class="title" >Felhasználói profil adatai</div>
+    <form action="#">
+        <div class="user-details" *ngIf="authService.userData as users">
+            <div class="input-box">
+                <span class="details">Teljes név</span>
+                <input type="text" placeholder="Add meg a neved" required #displayName>
+            </div>
+            <div class="input-box">
+                <span class="details">UserName</span>
+                <input type="text" placeholder="Add meg a felhasználó neved" required>
+            </div>
+            <div class="input-box">
+              <span class="details">Születésnap</span>
+              <input type="date" placeholder="Enter your e-mail" required #birthday>
+          </div>
+            <div class="input-box">
+                <span class="details">E-mail</span>
+                <input [(ngModel)]="users.email" name="email" type="email" placeholder="Enter your e-mail" required #email>
+            </div>
+            <div class="input-box">
+                <span class="details">Telefonszám</span>
+                <input type="tel" placeholder="Add meg a telefonszámod" required #phone>
+            </div>
+            <div class="input-box">
+                <span class="details">Profilkép</span>
+                <input type="file" placeholder="Add meg a telefonszámod" required #picture  style="padding-left: 0; padding-top: 10px; border: none;">
+            </div>
+           
+        </div>
+        <div class="gender-details">
+            <input type="radio" name="gender" id="dot-1" #gender>
+            <input type="radio" name="gender" id="dot-2" #gender>
+            <input type="radio" name="gender" id="dot-3" #gender>
+            <input type="radio" name="gender" id="dot-4" #gender>
+            <span class="gender-title">Nem</span>
+                <div class="category">
+                    <label for="dot-1">
+                        <span class="dot one"></span>
+                        <span class="gender">Férfi</span>
+                    </label>
+                    <label for="dot-2">
+                        <span class="dot two"></span>
+                        <span class="gender">Nő</span>
+                    </label>
+                    <label for="dot-3">
+                        <span class="dot three"></span>
+                        <span class="gender">Egyéb</span>
+                    </label>
+                    <label for="dot-4">
+                        <span class="dot four"></span>
+                        <span class="gender">Nem nyilatkozom</span>
+                    </label>
+                </div>
+        </div>
+        <div class="button">
+          <input *ngIf="authService.userData as users" type="submit" value="profile" (click)="authService.SetUserData(users.uid)"/>
+        </div>
+    </form>
+</div>
+
+
+</body>
