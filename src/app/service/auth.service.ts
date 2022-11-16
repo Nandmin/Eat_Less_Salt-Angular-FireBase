@@ -40,10 +40,11 @@ export class AuthService {
       .then((result) => {
         this.ngZone.run(() => {
           // this.router.navigate(['dashboard']);
-          // sessionStorage.setItem('loggedUser', result.user?.displayName);
+          // sessionStorage.setItem('loggedUser', result.user?.email);
           this.router.navigate(['home']);
         });
         this.SetUserData(result.user);
+        this.isLoggedIn;
         console.log('result user: ', result.user);
       })
       .catch((error) => {

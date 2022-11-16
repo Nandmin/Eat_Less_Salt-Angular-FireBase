@@ -22,7 +22,7 @@ export class MenuComponent implements OnInit {
   
   ngOnInit(): void {
     if(this.isLoggedIn){
-      this.userData = this.auth.user.email;
+      this.userData = this.auth.user;
     }else{
       // this.userData = 'logged user';
     }
