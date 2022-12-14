@@ -89,3 +89,16 @@ th {
 .model-body-error {
     background-color: rgb(245, 245, 245);
 }
+
+.search-wrapper input {
+    text-align: center;
+    border-radius: 10px;
+    border-color: gray;
+    /* display: flex;
+    justify-content: center; */
+    width: 600px;
+    /* margin-left: 30%;
+    margin-right: 30%; */
+    margin: 0 auto;
+    float: none;
+}

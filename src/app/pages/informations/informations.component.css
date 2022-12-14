@@ -133,3 +133,9 @@ h2 {
 .old {
     visibility: hidden;
 }
+
+.section {
+    scrollbar-color: #6969dd #e0e0e0;
+    scrollbar-width: thin;
+  }
+
