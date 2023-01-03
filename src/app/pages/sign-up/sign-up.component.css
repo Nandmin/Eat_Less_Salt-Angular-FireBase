@@ -177,10 +177,10 @@ button {
 .orInner {
     text-align: center;
     
-    margin-left: 35%;
-    margin-right: 20%;
+    margin-left: 50%;
+    margin-right: 50%;
     /* font-weight: bold; */
-    font-size: 15px;
+    font-size: 18px;
 }
 
 .redirectToLogin {

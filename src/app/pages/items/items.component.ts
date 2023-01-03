@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Items } from 'src/app/model/items';
 import { ItemsService } from 'src/app/service/items.service';
@@ -20,7 +20,21 @@ export class ItemsComponent implements OnInit {
   index: number = 1;
   fat: number = 0;
   sFat: number = 0;
+
+  _filterText: string = '';
+  filteredItems: Items[] | any;
+    phraseString: string ="";
+    phraseKey: string = "not set";
+    newRow: any = {};
   
+    get filterText(){
+      return this._filterText;
+    }
+
+    set filterText(value: string){
+      this._filterText = value;
+
+    }
   
 
   constructor(
@@ -139,7 +153,15 @@ export class ItemsComponent implements OnInit {
       );
   }
 
-  // constructor() { }
+  filterByName(filterTerm: string){
+    if (this.items.pipe.length  === 0 || this.filterText === ''){
+      return this.items;
+    }else{
+      // return this.itemService.all.pipe(Items)
+      return this.itemService.all
+    }
+
+  }
 
   ngOnInit(): void {
   }

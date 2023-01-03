@@ -1,0 +1,103 @@
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NLE0ZZTKGG"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-NLE0ZZTKGG');
+</script>
+
+<app-menu></app-menu>
+
+<h1 class="new text-center">Új termék rögzítése</h1>
+<!-- <h3 class="text-center">A megadott adatok 100g mennyiségre vonatkoznak</h3> -->
+<div class="col-10 offset-1">
+    <table class="table table-striped table-hover">
+        <thead class="text-center">
+            <tr>
+                <th style="width: 25%">Termék neve</th>
+                <th>Energia (KJ)</th>
+                <th>Energia (Kcal)</th>
+                <th>Zsír</th>
+                <th>Telített zsír</th>
+                <th>Szénhidrát</th>
+                <th>Cukor</th>
+                <th>Fehérje</th>
+                <th>Só</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <input [(ngModel)]="newItem.name" type="text" rows="4" class="form-control bg-white" #name>
+                </td>
+                <td>
+                    <input [(ngModel)]="newItem.energyKJ" type="number" class="form-control  bg-white">
+                </td>
+                <td>
+                    <input [(ngModel)]="newItem.energyKcal" type="number" class="form-control  bg-white">
+                </td>
+                <td>
+                    <input [(ngModel)]="newItem.fat" type="number" class="form-control  bg-white" name="fat" #fat>
+                </td>
+                <td>
+                    <input [(ngModel)]="newItem.sFat" type="number" class="form-control  bg-white" name="sFat" #sfat>
+                </td>
+                <td>
+                    <input [(ngModel)]="newItem.carbonHydrate" type="number" class="form-control  bg-white" #carbon>
+                </td>
+                <td>
+                    <input [(ngModel)]="newItem.sugar" type="number" class="form-control  bg-white" #sugar>
+                </td>
+                <td>
+                    <input [(ngModel)]="newItem.protein" type="number" class="form-control  bg-white">
+                </td>
+                <td>
+                    <input [(ngModel)]="newItem.salt" type="number" class="form-control  bg-white">
+                </td>
+                <td>
+                    <button (click)="onCreate(newItem, fat.value, sfat.value, carbon.value, sugar.value)"
+                        class="btn btn-success">Add</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+     <!-- Start Messenger Modal -->
+     <div id="messengerModal" class="modal fade" role="dialog"
+     [ngStyle]="{'display': messengerModalIsOpen ? 'block' : 'none', 'opacity': 1}">
+     <div class="modal-dialog modal-dialog-centered modal">
+       <div class="modal-content">
+         <div class="modal-header">
+           <h4 class="modal-title"></h4>
+         </div>
+         <div class="modal-body text-center">{{ message }}</div>
+         <div class="modal-footer text-center" text-align="center-align">
+           <button type="button" id="btnOK" class="btn btn-success text-center" (click)="btnMessengerClick(false)"><i
+               class="fa fa-check fa-fw"></i> OK</button>
+         </div>
+       </div>
+     </div>
+   </div>
+   <!-- End of Messenger Modal -->
+
+   <!-- Start Error Modal -->
+   <div id="errorModal" class="modal fade" role="dialog"
+     [ngStyle]="{'display': errorModalIsOpen ? 'block' : 'none', 'opacity': 1}">
+     <div class="modal-dialog modal-dialog-centered modal">
+       <div class="modal-content">
+         <div class="modal-header-error">
+           <h4 class="modal-title text-center p-3">Adatrögzítési hiba!</h4>
+         </div>
+         <div class="modal-body text-center pt-3 pb-3">{{ message }}</div>
+         <div class="modal-footer-error pt-3 pb-3" text-align="center">
+           <button type="button" id="btnOK" class="btn btn-danger" (click)="btnErrorClick(false)"><i
+               class="fa fa-check fa-fw"></i> OK</button>
+         </div>
+       </div>
+     </div>
+   </div>
+   <!-- End of Error Modal -->
+</div>

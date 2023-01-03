@@ -10,10 +10,12 @@ import { InformationsComponent } from './pages/informations/informations.compone
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { LoginComponent } from './pages/login/login.component';
+import { NewitemComponent } from './pages/newitem/newitem.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'items', component: ItemsComponent },
+  { path: 'newitem', component: NewitemComponent },
   { path: 'informations', component: InformationsComponent },
   { path: 'sign-up', component: SignUpComponent },
   { path: 'login', component: LoginComponent },

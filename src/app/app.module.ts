@@ -22,6 +22,7 @@ import { getStorage, provideStorage } from '@angular/fire/storage';
 import { provideAuth } from '@angular/fire/auth';
 import { provideFirestore } from '@angular/fire/firestore';
 import { getFirestore } from 'firebase/firestore';
+import { NewitemComponent } from './pages/newitem/newitem.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { getFirestore } from 'firebase/firestore';
     SignUpComponent,
     MenuComponent,
     ProfileComponent,
-    LoginComponent
+    LoginComponent,
+    NewitemComponent
   ],
   imports: [
     BrowserModule,
