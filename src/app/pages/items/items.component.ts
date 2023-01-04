@@ -1,7 +1,8 @@
-import { Component, Input, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, NgModule , Input, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Items } from 'src/app/model/items';
 import { ItemsService } from 'src/app/service/items.service';
+// import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @Component({
   selector: 'app-items',
@@ -16,27 +17,17 @@ export class ItemsComponent implements OnInit {
   newItem: Items = new Items();
   page: number | any;
   message: string = "";
+  itemFilter: any = '';
   // id: number;
   index: number = 1;
   fat: number = 0;
   sFat: number = 0;
 
-  _filterText: string = '';
-  filteredItems: Items[] | any;
+
     phraseString: string ="";
     phraseKey: string = "not set";
     newRow: any = {};
   
-    get filterText(){
-      return this._filterText;
-    }
-
-    set filterText(value: string){
-      this._filterText = value;
-
-    }
-  
-
   constructor(
     private itemService: ItemsService,
   ){  }
@@ -153,15 +144,6 @@ export class ItemsComponent implements OnInit {
       );
   }
 
-  filterByName(filterTerm: string){
-    if (this.items.pipe.length  === 0 || this.filterText === ''){
-      return this.items;
-    }else{
-      // return this.itemService.all.pipe(Items)
-      return this.itemService.all
-    }
-
-  }
 
   ngOnInit(): void {
   }

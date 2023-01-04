@@ -23,6 +23,7 @@ import { provideAuth } from '@angular/fire/auth';
 import { provideFirestore } from '@angular/fire/firestore';
 import { getFirestore } from 'firebase/firestore';
 import { NewitemComponent } from './pages/newitem/newitem.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { NewitemComponent } from './pages/newitem/newitem.component';
     AngularFirestoreModule,
     FormsModule,
     NgxPaginationModule,
-    AppRoutingModule
+    AppRoutingModule,
+    Ng2SearchPipeModule
   ],
   providers: [PaginationComponent],
   bootstrap: [AppComponent]
