@@ -1,4 +1,5 @@
 import { Component, NgZone, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { getAuth, updateProfile } from 'firebase/auth';
 import { AuthService } from 'src/app/service/auth.service';
 
@@ -16,6 +17,7 @@ export class ProfileComponent implements OnInit {
   user$: any = getAuth().currentUser
   gender: string = '';
   birthday: string = ''
+  displayName: any;
 
   constructor(
     // public afs: AngularFirestore,   // Inject Firestore service
@@ -23,7 +25,8 @@ export class ProfileComponent implements OnInit {
     // public router: Router,
     // public ngZone: NgZone // NgZone service to remove outside scope warning
 
-     public authService: AuthService
+     public authService: AuthService,
+     public afAuth: AngularFireAuth
   ) { }
 
   //  const auth: any = getAuth().currentUser;
@@ -53,13 +56,13 @@ export class ProfileComponent implements OnInit {
 
   //   });
 
-  //   async UpdateProfile(displayName: string) {
-  //     const profile = {
-  //         displayName: displayName,
-  //         photoURL: "https://example.com/jane-q-user/profile.jpg"
-  //     }
-  //     return (await this.afAuth.currentUser).updateProfile(profile);
-  // }
+    async UpdateProfile(displayName: string) {
+      const profile = {
+          displayName: displayName,
+          photoURL: "https://example.com/jane-q-user/profile.jpg"
+      }
+      return (await this.afAuth.currentUser)?.updateProfile(profile);
+  }
 
   // const auth: any = getAuth();
   

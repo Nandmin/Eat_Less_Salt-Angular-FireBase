@@ -124,9 +124,9 @@ export class AuthService {
     const userData: User = {
       uid: user.uid,
       email: user.email,
-      displayName: user.displayName,
+      displayName: 'user.displayName',
       photoURL: user.photoURL,
-      // role: user.role,
+      //role: user.role,
       emailVerified: user.emailVerified,
     };
     return userRef.set(userData, {

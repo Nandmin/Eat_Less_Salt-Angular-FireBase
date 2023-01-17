@@ -11,8 +11,10 @@ export class LoginComponent implements OnInit {
   isLoggedIn: boolean = this.authService.isLoggedIn; 
 
   constructor(
-    public authService: AuthService
+    public authService: AuthService    
   ) { }
+
+ 
 
   ngOnInit(): void {
     if(this.isLoggedIn){
