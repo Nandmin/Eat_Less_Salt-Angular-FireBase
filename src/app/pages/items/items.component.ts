@@ -1,6 +1,7 @@
 import { Component, NgModule , Input, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Items } from 'src/app/model/items';
+import { AuthService } from 'src/app/service/auth.service';
 import { ItemsService } from 'src/app/service/items.service';
 // import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
@@ -18,10 +19,10 @@ export class ItemsComponent implements OnInit {
   page: number | any;
   message: string = "";
   itemFilter: any = '';
-  // id: number;
   index: number = 1;
   fat: number = 0;
   sFat: number = 0;
+  IsLoggedIn: boolean = this.authService.isLoggedIn;
 
 
     phraseString: string ="";
@@ -30,6 +31,7 @@ export class ItemsComponent implements OnInit {
   
   constructor(
     private itemService: ItemsService,
+    private authService: AuthService   
   ){  }
 
   // public updateModalIsOpen : boolean = false;

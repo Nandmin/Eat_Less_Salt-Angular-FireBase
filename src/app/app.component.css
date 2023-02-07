@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Charis+SIL&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap'); */
 
 * {
     /* background-color: blanchedalmond; */
     /* font-family: 'Charis SIL', serif; */
     font-family: 'Montserrat', sans-serif;
-    /* font-weight: 400; */
+    /* font-family: 'Aboreto', cursive; */
+    /* font-weight: 500; */
 }
 
 th {

@@ -13,6 +13,11 @@ input[type="number"]{
 
 * {
     /* background-color: rgb(247, 243, 243); */
+    
+    /* background: #9191af;
+    background: linear-gradient(0deg,#9191af 0%, #dccbcb 80%);
+    /* background: -webkit-linear-gradient(0deg,#9191af 0%, #dccbcb 80%);
+    background: -moz-linear-gradient(0deg,#9191af 0%, #dccbcb 80%); */
 }
 
 h1 {

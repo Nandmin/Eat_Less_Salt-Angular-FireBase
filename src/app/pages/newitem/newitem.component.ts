@@ -19,12 +19,9 @@ export class NewitemComponent implements OnInit {
   newItem: Items = new Items();
   page: number | any;
   message: string = "";
-  // id: number;
   index: number = 1;
   fat: number = 0;
   sFat: number = 0;
-
-    // newRow: any = {};
 
   constructor(
     private itemService: ItemsService,

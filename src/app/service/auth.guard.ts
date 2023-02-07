@@ -8,18 +8,23 @@ import { AuthService } from './auth.service';
 })
 
 export class AuthGuard implements CanActivate {
-  
+  message: string = "";
+
   constructor(
     public authService: AuthService,
-    public router: Router
+    public router: Router,
   ){ }
 
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
+
     if(this.authService.isLoggedIn !== true) {
-      this.router.navigate(['sign-in'])
+      this.message = "Nincs jogosultságod az oldal megtekintésére!"
+      alert(this.message);
+      this.router.navigate(['home'])
     }
+    
     return true;
   } 
 }
